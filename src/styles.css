@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+    @apply bg-[#F4F7F8] m-0 p-0;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.animate-fade-up {
+    animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.4s;
+}
+
+/* Prepara o avatar para começar invisível */
+[data-aos="avatar-story"] {
+    opacity: 0;
+}
+
+/* Quando o scroll chegar na seção, roda a animação de 2 segundos */
+[data-aos="avatar-story"].aos-animate {
+    animation: avatarStoryTimeline 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* A Linha do Tempo da Animação (Keyframes) */
+@keyframes avatarStoryTimeline {
+    0% {
+        opacity: 0;
+        /* Passo 1: Escondido, pequeno, jogado 400px pra esquerda (meio da tela) e girado duas vezes */
+        transform: translateX(-400px) scale(0.2) rotate(-720deg);
+    }
+
+    30% {
+        opacity: 1;
+        /* Passo 2: Surge no meio da tela bem grande e para de girar */
+        transform: translateX(-400px) scale(1.4) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        /* Passo 3: Fica congelado no meio da tela até a metade do tempo (pausa dramática) */
+        transform: translateX(-400px) scale(1.4) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        /* Passo 4: Desliza suavemente pra direita pro tamanho e posição normais */
+        transform: translateX(0) scale(1) rotate(0deg);
+    }
+}
