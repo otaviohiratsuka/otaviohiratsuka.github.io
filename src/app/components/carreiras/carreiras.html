@@ -90,5 +90,25 @@
             </div>
         </div>
 
+        <!-- Sessão do Currículo -->
+        <div class="mt-20 flex flex-col items-center" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+            <p class="text-[#25343F] text-[17px] font-medium mb-6">
+                Baixe meu Currículo
+            </p>
+
+            <!-- O atributo download força o navegador a baixar o arquivo ao invés de abri-lo -->
+            <a href="/curriculo.pdf" download="Curriculo_Otavio.pdf"
+                class="inline-flex items-center gap-3 bg-[#FF9B51] text-[#25343F] font-semibold px-8 py-3 rounded-xl hover:scale-105 hover:bg-[#e88a42] transition-all duration-300 shadow-sm">
+                <!-- Ícone de Download em SVG -->
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Currículo
+            </a>
+        </div>
+
     </div>
 </section>
